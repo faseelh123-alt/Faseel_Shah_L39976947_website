@@ -1,0 +1,270 @@
+/* 
+   Root Variables (Color Palette)
+ */
+:root {
+  --logo-orange: #F29B63;       /* Main background color */
+  --soft-yellow: #F1D27E;       /* Accent background color */
+  --text-black: #0C0C0C;        /* Primary text color */
+  --navbar-dark: #40371E;       /* Dark mode navbar background */
+  --accent-olive: #C0A742;      /* Highlight and button color */
+  --focus-ring: 2px dashed #C0A742; /* Focus outline for accessibility */
+}
+
+/* 
+   Global Styles
+ */
+html {
+  scroll-behavior: smooth;      /* Smooth scrolling for anchor links */
+}
+
+body {
+  background-color: var(--logo-orange);
+  color: var(--text-black);
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  accent-color: var(--accent-olive); /* Accent color for inputs/buttons */
+}
+
+/* 
+   Accessibility: Skip Link
+ */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent-olive);
+  color: var(--text-black);
+  padding: 8px 12px;
+  z-index: 100;
+  transition: top 0.3s;
+  font-weight: bold;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* 
+   Navbar Styles
+ */
+.navbar {
+  background-color: var(--logo-orange);
+}
+
+.logo-img {
+  height: 50px;
+  display: block;
+}
+
+.navbar-text {
+  color: var(--text-black);
+  font-weight: 500;
+}
+
+/* 
+   Buttons: Menu & Dark Mode Toggle
+ */
+.menu-btn,
+.toggle-btn {
+  background-color: var(--soft-yellow);
+  color: var(--text-black);
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1.4rem;
+  padding: 6px 12px;
+  border-radius: 50px;
+}
+
+.toggle-btn:hover,
+.menu-btn:hover {
+  background-color: var(--accent-olive);
+  transform: scale(1.1);
+}
+
+/* 
+   Dropdown Menu
+ */
+.dropdown-menu {
+  background-color: var(--soft-yellow);
+}
+
+.dropdown-item {
+  color: var(--text-black);
+}
+
+.dropdown-item:hover {
+  background-color: var(--accent-olive);
+  color: var(--text-black);
+}
+
+/* 
+   Hero Section
+ */
+.hero {
+  background-color: var(--soft-yellow);
+  color: var(--text-black);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* 
+   Main Content & Articles
+ */
+.main-content,
+.articles {
+  background-color: var(--logo-orange);
+}
+
+/* 
+   Article Cards
+ */
+.article-card {
+  background-color: var(--soft-yellow);
+  border: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+}
+
+/* 
+   Buttons: Read More & Subscribe
+ */
+.read-btn,
+.subscribe-btn {
+  background-color: var(--accent-olive);
+  color: var(--text-black);
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.read-btn:hover,
+.subscribe-btn:hover {
+  background-color: var(--text-black);
+  color: var(--soft-yellow);
+}
+
+/* 
+   Form Sections
+ */
+.newsletter,
+.contact-form,
+.login-form,
+.not-found {
+  background-color: var(--soft-yellow);
+  color: var(--text-black);
+}
+
+/* 
+   Footer
+ */
+.footer {
+  background-color: var(--soft-yellow);
+  color: var(--text-black);
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: var(--text-black);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--accent-olive);
+}
+
+/* 
+   Accessibility: Hidden Labels
+ */
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* 
+   Focus Styles
+ */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 4px;
+}
+
+/* 
+   Dark Mode Styles
+ */
+.dark-mode {
+  background-color: var(--text-black);
+  color: var(--soft-yellow);
+}
+
+/* Navbar in Dark Mode */
+.dark-mode .navbar {
+  background-color: var(--navbar-dark);
+}
+
+.dark-mode .navbar-text,
+.dark-mode .nav-link,
+.dark-mode .dropdown-toggle,
+.dark-mode .toggle-btn,
+.dark-mode .menu-btn {
+  color: var(--soft-yellow) !important;
+  background-color: var(--navbar-dark);
+}
+
+/* Dropdown in Dark Mode */
+.dark-mode .dropdown-menu {
+  background-color: var(--navbar-dark);
+}
+
+.dark-mode .dropdown-item {
+  color: var(--soft-yellow);
+}
+
+.dark-mode .dropdown-item:hover {
+  background-color: var(--accent-olive);
+  color: var(--text-black);
+}
+
+/* Sections in Dark Mode */
+.dark-mode .hero,
+.dark-mode .main-content,
+.dark-mode .newsletter,
+.dark-mode .contact-form,
+.dark-mode .login-form,
+.dark-mode .articles,
+.dark-mode .not-found,
+.dark-mode .footer {
+  background-color: var(--navbar-dark);
+  color: var(--soft-yellow);
+}
+
+/* Article Cards in Dark Mode */
+.dark-mode .article-card {
+  background-color: var(--text-black);
+  color: var(--soft-yellow);
+}
+
+/* Buttons in Dark Mode */
+.dark-mode .read-btn,
+.dark-mode .subscribe-btn {
+  background-color: var(--accent-olive);
+  color: var(--text-black);
+}
+
+/* Footer Links in Dark Mode */
+.dark-mode .footer a {
+  color: var(--soft-yellow);
+}
+
+.dark-mode .footer a:hover {
+  color: var(--accent-olive);
+}
