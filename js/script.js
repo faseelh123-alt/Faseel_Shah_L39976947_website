@@ -2,6 +2,12 @@
 const toggleBtn = document.getElementById("modeToggle");
 const modeIcon = document.getElementById("modeIcon");
 
+// Load saved theme from localStorage
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-mode");
+}
+
 // Function to update the icon based on current mode
 function updateIcon() {
   const isDark = document.body.classList.contains("dark-mode");
@@ -11,6 +17,8 @@ function updateIcon() {
 // Toggle dark mode when button is clicked
 toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
+  const isDark = document.body.classList.contains("dark-mode");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
   updateIcon();
   toggleBtn.blur(); // Remove focus ring after click
 });
@@ -19,6 +27,8 @@ toggleBtn.addEventListener("click", () => {
 document.addEventListener("keydown", (e) => {
   if (e.key.toLowerCase() === "d" && !e.ctrlKey && !e.metaKey) {
     document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
     updateIcon();
   }
 });
